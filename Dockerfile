@@ -39,7 +39,9 @@ COPY --from=downloader /app/novnc/ /var/lib/rport-novnc
 
 RUN useradd -d /var/lib/rport -m -U -r -s /bin/false rport
 
+# Legacy: Needs to be set in rportd.conf file
 RUN touch /var/lib/rport/rport.log && chown rport /var/lib/rport/rport.log
+#RUN touch /var/log/rport/rportd.log && chown rport /var/log/rport/rportd.log
 
 #COPY jail.conf /etc/fail2ban/
 #COPY defaults-debian.conf  /etc/fail2ban/jail.d
@@ -51,4 +53,4 @@ USER rport
 
 EXPOSE 8080
 EXPOSE 3000
-EXPOSE 20000-30000
+EXPOSE 20000-20100
