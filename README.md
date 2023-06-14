@@ -14,7 +14,7 @@ services:
   rport-server:
     container_name: rport
     image: cchepeaumwb/rport-docker:latest
-    restart: always
+    restart: unless-stopped
     privileged: true
     ports:
       - 3000:3000
