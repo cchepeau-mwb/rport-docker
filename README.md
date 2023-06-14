@@ -13,7 +13,7 @@ version: '3.9'
 services:
   rport-server:
     container_name: rport
-    image: iotech17/rport:latest
+    image: cchepeaumwb/rport-docker:latest
     restart: always
     privileged: true
     ports:
